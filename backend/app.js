@@ -72,5 +72,20 @@ app.put("/updateChessChampion/:id", async (req, res) => {
     }
 })
 
+app.delete("/deleteChessChampion/:id", async (req, res) => {
+    const id = parseInt(req.params.id);
+    try{
+        const deleted = await db("wereldkampioenen").where("id", id).del();
+        if(deleted === 0){
+            res.status(404).json({error: "Afwezigheid niet gevonden"});
+        }
+        else{
+            res.status(200).json({message: "Afwezigheid verwijderd"});
+        }
+    }catch{
+        res.status(500).json({message: "internal server error"});
+    }
+})
+
 app.listen(3333);
 console.log('Server is running on port 3333');

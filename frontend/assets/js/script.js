@@ -6,6 +6,8 @@ function init() {
     console.log("De pagina is volledig geladen");
     fetchData();
 }
+
+// data fetchen van de database
 async function fetchData() {
     try {
         let response = await fetch("http://localhost:3333/chessChampions");
@@ -17,6 +19,8 @@ async function fetchData() {
         console.error("Fout bij het ophalen van kampioenen:", error);
     }
 }
+
+//data printen op de html pagina
 function displayData(chessChampions){
     let listElement = document.getElementById("champions-list");
 
@@ -27,3 +31,6 @@ function displayData(chessChampions){
         listElement.appendChild(listItem);
     }
 }
+
+
+

@@ -46,6 +46,31 @@ app.post('/newChessChampion', async (req, res) => {
     }
 });
 
+app.put("/updateChessChampion/:id", async (req, res) => {
+    const id = parseInt(req.params.id);
+    const {naam, nationaliteit, jaar} = req.body;
+
+    if(!naam || !nationaliteit || !jaar){
+        return res.status(400).json({error: "Vul alle velden in"});
+    }
+    try{
+        const count = await db("wereldkampioenen")
+            .where({  id })
+            .update({naam, nationaliteit, jaar});
+
+        if (count === 0){
+            res.status(404).json({error: "kampioen niet gevonden"});
+        }
+
+        const updated = await db("wereldkampioenen").where({  id }).first();
+
+        res.status(200).json({
+            message: "kampioen bijgewerkt",
+            updated: updated});
+    }catch(error) {
+        res.status(500).json({error: "Fout bij het updaten van de wereldkampioen"});
+    }
+})
 
 app.listen(3333);
 console.log('Server is running on port 3333');

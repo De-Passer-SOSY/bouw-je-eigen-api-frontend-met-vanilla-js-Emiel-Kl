@@ -1,13 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./services/db');
+const fs = require("fs");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./services/swagger.json");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 
-app.get('/chessChampions', async (req, res) => {
+app.get("/chessChampions", async (req, res) => {
     try{
         const chessChampions = await db('wereldkampioenen');
         res.status(200).json(chessChampions);
@@ -29,7 +32,7 @@ app.get("/chessChampion/:id", async (req, res) => {
     }
 });
 
-app.post('/newChessChampion', async (req, res) => {
+app.post("/newChessChampion", async (req, res) => {
     const {naam, nationaliteit, jaar} = req.body;
 
     if (!naam || !nationaliteit || !jaar) {
@@ -77,15 +80,17 @@ app.delete("/deleteChessChampion/:id", async (req, res) => {
     try{
         const deleted = await db("wereldkampioenen").where("id", id).del();
         if(deleted === 0){
-            res.status(404).json({error: "Afwezigheid niet gevonden"});
+            res.status(404).json({error: "kampioen niet gevonden"});
         }
         else{
-            res.status(200).json({message: "Afwezigheid verwijderd"});
+            res.status(200).json({message: "kampioen verwijderd"});
         }
     }catch{
         res.status(500).json({message: "internal server error"});
     }
 })
 
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.listen(3333);
-console.log('Server is running on port 3333');
+console.log('Server is running on http://localhost:3333');

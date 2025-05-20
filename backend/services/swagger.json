@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "schaakkampioenen API",
+    "version": "1.0.0",
+    "description": "Een eenvoudige API voor schaakkampioenen"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333"
+    }
+  ],
+  "paths": {
+    "/chessChampions": {
+      "get": {
+        "summary": "Toon alle kampioen",
+        "responses": {
+          "200": {
+            "description": "Lijst van kampioenen"
+          }
+        }
+      }
+    },
+    "/chessChampion/{id}": {
+      "get": {
+        "summary": "Toon één kampioen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Kampioen gevonden"
+          },
+          "404": {
+            "description": "Niet gevonden"
+          }
+        }
+      }
+    },
+    "/newChessChampion": {
+      "post": {
+        "summary": "Voeg een kampioen toe",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "studentnaam": {
+                    "type": "string"
+                  },
+                  "reden": {
+                    "type": "string"
+                  },
+                  "datum": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "periode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Kampioen toegevoegd"
+          }
+        }
+      }
+    },
+    "/updateChessChampion/{id}": {
+      "put": {
+        "summary": "Wijzig een kampioen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "studentnaam": {
+                    "type": "string"
+                  },
+                  "reden": {
+                    "type": "string"
+                  },
+                  "datum": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "periode": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "kampioen bijgewerkt"
+          }
+        }
+      }
+    },
+    "/deleteChessChampion/{id}": {
+      "delete": {
+        "summary": "Verwijder een kampioen",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verwijderd"
+          },
+          "404": {
+            "description": "Niet gevonden"
+          }
+        }
+      }
+    }
+  }
+}

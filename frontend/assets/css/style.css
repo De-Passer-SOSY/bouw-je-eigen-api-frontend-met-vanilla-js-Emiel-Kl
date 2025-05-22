@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+    th{
+        border: 1px solid lightgray;
+        padding: 10px 20px 10px 20px;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+    td{
+        border: 1px solid lightgray;
+        padding: 10px 20px 10px 20px;
+    }
+}

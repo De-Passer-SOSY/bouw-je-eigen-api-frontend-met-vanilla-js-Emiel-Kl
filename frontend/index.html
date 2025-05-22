@@ -7,55 +7,53 @@
 </head>
 <body>
 
-    <div class="layout">
-
+<section class="layout">
         <!-- Navigatie / zijbalk -->
-        <nav class="sidebar" aria-label="Hoofdmenu">
-            <div class="logo">📊 Dashboard</div>
+    <nav class="sidebar" aria-label="Hoofdmenu">
+        <section class="logo">📊 Dashboard</section>
             <ul>
                 <li><a href="#">🏠 Home</a></li>
                 <li><a href="index.html" class="active">🗓️ kampioenen</a></li>
             </ul>
-        </nav>
+    </nav>
 
         <!-- Hoofdinhoud -->
-        <main class="dashboard">
-            <header>
-                <h1>Kampioenen Beheer</h1>
-                <div id="alert" class="alert hidden" role="alert"></div>
-            </header>
+    <main class="dashboard">
+        <header>
+            <h1>Kampioenen Beheer</h1>
+        </header>
 
-            <!-- Formuliersectie -->
-            <section class="form-section hidden" id="form-wrapper" aria-label="Kampioen toevoegen of wijzigen">
-                <form id="champion-form">
-                    <input type="hidden" id="champion-id" />
-                    <div class="form-group">
-                        <label for="naam">naam</label>
-                        <input type="text" id="naam" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="nationaliteit">nationaliteit</label>
-                        <input type="text" id="nationaliteit" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="jaar">jaar</label>
-                        <input type="number" id="jaar" required />
-                    </div>
+        <!-- Formuliersectie -->
+        <section class="form-section hidden" id="form-wrapper" aria-label="Kampioen toevoegen of wijzigen">
+            <form id="champion-form">
+                <input type="hidden" id="champion-id"/>
+                <section class="form-group">
+                    <label for="naam">naam</label>
+                    <input type="text" id="naam" required/>
+                </section>
 
+                <section class="form-group">
+                    <label for="nationaliteit">nationaliteit</label>
+                    <input type="text" id="nationaliteit" required/>
+                </section>
+
+                <section class="form-group">
+                    <label for="jaar">jaar</label>
+                    <input type="number" id="jaar" required/>
+                </section>
                     <button type="submit" class="save-btn">💾 Opslaan</button>
-                </form>
-            </section>
+            </form>
+        </section>
 
-            <!-- Toevoegen-knop -->
-            <section class="add-button-section" aria-label="Nieuwe kampioen">
-                <button class="open-form-btn right-align" id="open-form">➕ Nieuwe kampioen</button>
-            </section>
-
+        <!-- Toevoegen-knop -->
+        <section class="add-button-section" aria-label="Nieuwe kampioen">
+            <button class="open-form-btn right-align" id="open-form">➕ Nieuwe kampioen</button>
+        </section>
 
             <!-- Tabel -->
-            <section class="table-section" aria-label="Overzicht kampioenen">
-                <table>
-                    <thead>
+        <section class="table-section" aria-label="Overzicht kampioenen">
+            <table>
+                <thead>
                     <tr>
                         <th scope="col">naam</th>
                         <th scope="col">nationaliteit</th>
@@ -67,7 +65,7 @@
                 </table>
             </section>
         </main>
-    </div>
+    </section>
 <script src="assets/js/script.js"></script>
 
 </body>

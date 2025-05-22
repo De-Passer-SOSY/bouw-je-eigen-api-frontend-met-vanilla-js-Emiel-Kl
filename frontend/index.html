@@ -9,13 +9,13 @@
 
 <section class="layout">
         <!-- Navigatie / zijbalk -->
-    <nav class="sidebar" aria-label="Hoofdmenu">
-        <section class="logo">📊 Dashboard</section>
-            <ul>
-                <li><a href="#">🏠 Home</a></li>
-                <li><a href="index.html" class="active">🗓️ kampioenen</a></li>
-            </ul>
-    </nav>
+    <header class="page-header">
+        <section class="logo">♟</section>
+        <nav class="navigation" aria-label="Hoofdmenu">
+            <a href="#">🏠 Home</a>
+            <a href="index.html">🗓️ kampioenen</a>
+        </nav>
+    </header>
 
         <!-- Hoofdinhoud -->
     <main class="dashboard">
@@ -24,7 +24,7 @@
         </header>
 
         <!-- Formuliersectie -->
-        <section class="form-section hidden" id="form-wrapper" aria-label="Kampioen toevoegen of wijzigen">
+        <section class="form-section" id="form-wrapper" aria-label="Kampioen toevoegen of wijzigen">
             <form id="champion-form">
                 <input type="hidden" id="champion-id"/>
                 <section class="form-group">

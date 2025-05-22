@@ -2,9 +2,52 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+main{
+    margin-left:20px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #2c2c2c;
+    color: white;
+    .logo{
+        font-size: 40px;
+    }
+    a {
+        padding: 10px;
+        margin: 10px;
+        color: white;
+        text-decoration: none;
+    }
+    a:hover{
+        color: lightgray;
+    }
+}
+
+.form-section {
+    margin: 20px;
+}
+
+.form-group input{
+    display: block;
+    width: 90%;
+    padding: 5px;
+    border: lightgray solid 1px;
+    margin:5px 0 10px 0;
+}
+
+
+
+
+
 table {
+    margin: 20px;
     border-collapse: collapse;
     border: 1px solid black;
     padding: 10px 20px 10px 20px;

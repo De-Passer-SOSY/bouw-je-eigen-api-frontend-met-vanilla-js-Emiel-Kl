@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', init);
 
 function init() {
     fetchChampions();
-
     // Formulier en knop selecteren
     const form = document.getElementById('champion-form');
     const formWrapper = document.getElementById('form-wrapper');
@@ -45,8 +44,8 @@ function renderChampions(wereldkampioenen) {
       <td>${champion.nationaliteit}</td>
       <td>${champion.jaar}</td>
       <td>
-        <button class="edit-btn" data-id="${champion.id}">✏️ Wijzig</button>
-        <button class="delete-btn" data-id="${champion.id}">🗑️ Verwijder</button>
+        <button class="edit-btn" data-id="${champion.id}">✏️ Wijzig </button>
+        <button class="delete-btn" data-id="${champion.id}">🗑️ Verwijder </button>
       </td>
     `;
 

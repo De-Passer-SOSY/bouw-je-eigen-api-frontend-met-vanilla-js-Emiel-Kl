@@ -11,7 +11,9 @@ Swagger-documentatie is beschikbaar.
 
 
     2. start de server
-* type - node app.js - om de sever te starten
+* open de correcte map met - cd backend - in de terminal.
+
+* type - node app.js - om de sever te starten.
 
 
 ## 3. Welke endpoints zijn er

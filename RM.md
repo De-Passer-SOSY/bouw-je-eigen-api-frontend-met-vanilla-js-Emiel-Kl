@@ -17,27 +17,27 @@ Swagger-documentatie is beschikbaar.
 
 
 ## 3. Welke endpoints zijn er
-    1. GET '/chessChampions'
+    1. GET 'http://localhost:3333/chessChampions'
 * Geeft een lijst van alle schaakkampioenen terug.
 
 
-    2. GET '/chessChampion/:id'
+    2. GET 'http://localhost:3333/chessChampion/:id'
 * Haalt één kampioen op via ID.
 
 
-    3. POST '/newChessChampion'
+    3. POST 'http://localhost:3333/newChessChampion'
 * Voegt een nieuwe kampioen toe. Vereist `naam`, `nationaliteit`, `jaar` om een nieuwe speler toe te voegen.
 
 
-    4. PUT	'/updateChessChampion/:id'
+    4. PUT	'http://localhost:3333/updateChessChampion/:id'
 * Wijzigt een bestaande kampioen op basis van ID. Vereist alle velden.
 
 
-    5. DELETE	'/deleteChessChampion/:id'
+    5. DELETE	'http://localhost:3333/deleteChessChampion/:id'
 * Verwijdert een kampioen op basis van ID.
 
 
-    6. GET	'/api-docs'
+    6. GET	'http://localhost:3333/api-docs'
 * Swagger UI met documentatie van alle endpoints.
 
 
